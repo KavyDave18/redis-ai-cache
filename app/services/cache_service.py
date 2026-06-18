@@ -28,3 +28,9 @@ async def cache_response(
         CACHE_TTL,
         response
     )
+
+async def delete_cache_response(question:str):
+
+    deleted = await redis_client.delete(question)
+
+    return deleted
